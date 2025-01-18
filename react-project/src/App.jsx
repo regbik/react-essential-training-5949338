@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react/prop-types */
 import "./App.css";
 
 function Header({ name, year }) {
@@ -14,11 +16,16 @@ const items = [
   "Tofu with Vegetables"
 ];
 
+const dishObj = items.map((dish, i) => ({
+    id: i,
+    title: dish
+}));
+
 function Main({ dishes }) {
   return (
     <ul>
       {dishes.map((dish) => (
-        <li style={{ listStyleType: "none" }}>{dish}</li>
+        <li style={{ listStyleType: "none" }} key={dish.id}>{dish.title}</li>
       ))}
     </ul>
   );
@@ -28,7 +35,7 @@ function App() {
   return (
     <div>
       <Header name="Alex" year={new Date().getFullYear()} />
-      <Main dishes={items} />
+      <Main dishes={dishObj} />
     </div>
   );
 }
