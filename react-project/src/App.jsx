@@ -1,13 +1,17 @@
 import "./App.css";
 
-let language = "React";
-let moon = "🌙";
+function Header() {
+  return (
+    <h1>Eve&apos;s Kitchen</h1>
+  )
+}
 
 function App() {
   return (
-    <h1>
-      Hello {language.toUpperCase()} {moon}!!
-    </h1>
+    <>
+      <Header />
+      <h3>We serve some good food here!</h3>
+    </>
   );
 }
 
